@@ -580,40 +580,40 @@ function App() {
 
       {/* Hero Section with Carousel */}
       <section className="relative min-h-screen bg-gradient-to-br from-gray-900 via-purple-900/30 to-blue-900/20 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-12 items-center min-h-screen">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-20 grid lg:grid-cols-2 gap-8 lg:gap-12 items-center min-h-screen">
           {/* Left Content */}
           <div className="z-10">
-            <h1 className="text-5xl md:text-6xl font-bold leading-tight mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 sm:mb-6">
               <span className="bg-gradient-to-r from-white via-gray-200 to-gray-400 bg-clip-text text-transparent">
                 YOUR JOURNEY<br />
                 TO THE PROS<br />
                 STARTS HERE
               </span>
             </h1>
-            <p className="text-xl text-gray-300 mb-8 max-w-lg">
+            <p className="text-lg sm:text-xl text-gray-300 mb-6 sm:mb-8 max-w-lg">
               Showcase your talent, get scouted, and take
               your career to the next level.
             </p>
-            <button className="bg-purple-600 hover:bg-purple-700 px-8 py-3 rounded-lg text-lg font-semibold transition-colors border border-purple-500">
+            <button className="bg-purple-600 hover:bg-purple-700 px-6 sm:px-8 py-2 sm:py-3 rounded-lg text-base sm:text-lg font-semibold transition-colors border border-purple-500 w-full sm:w-auto">
               FIND OUT HOW
             </button>
           </div>
           
           {/* Right Content - Player and Stats */}
-          <div className="relative flex items-center justify-center">
+          <div className="relative flex items-center justify-center order-first lg:order-last">
             {/* Player Image */}
-            <div className="relative z-10">
+            <div className="relative z-10 w-full max-w-sm lg:max-w-none">
               <img 
                 src={currentPlayer.image} 
                 alt={currentPlayer.name}
-                className="w-96 h-[600px] object-cover object-center"
+                className="w-full h-[400px] sm:h-[500px] lg:w-96 lg:h-[600px] object-cover object-center rounded-lg lg:rounded-none"
               />
             </div>
 
             {/* Player Stats Card */}
-            <div className="absolute top-8 right-0 bg-gray-800/90 backdrop-blur-sm rounded-lg p-6 w-80 z-20 border border-gray-700">
+            <div className="absolute top-4 sm:top-8 right-2 sm:right-0 bg-gray-800/90 backdrop-blur-sm rounded-lg p-3 sm:p-6 w-64 sm:w-80 z-20 border border-gray-700">
               <div className="text-sm text-gray-400 mb-2">Players Name</div>
-              <div className="text-xl font-bold mb-4 text-white">{currentPlayer.name}</div>
+              <div className="text-lg sm:text-xl font-bold mb-4 text-white">{currentPlayer.name}</div>
               
               <div className="space-y-4 mb-6">
                 <div className="flex justify-between items-center">
@@ -624,7 +624,7 @@ function App() {
                   </div>
                 </div>
                 
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-4">
                   <div>
                     <div className="text-gray-400 text-sm">Age</div>
                     <div className="text-white font-semibold">{currentPlayer.age}</div>
@@ -635,7 +635,7 @@ function App() {
                   </div>
                 </div>
                 
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-4">
                   <div>
                     <div className="text-gray-400 text-sm">Weight</div>
                     <div className="text-white font-semibold">{currentPlayer.weight}</div>
@@ -646,7 +646,7 @@ function App() {
                   </div>
                 </div>
                 
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-4">
                   <div>
                     <div className="text-gray-400 text-sm">
                       {currentPlayer.dominantHand ? 'Dominant Hand' : 'Dominant Foot'}
@@ -664,45 +664,45 @@ function App() {
 
               {/* Overall Rating */}
               <div className="text-center mb-6">
-                <div className="text-4xl font-bold text-blue-400 mb-2">{currentPlayer.overallRating}</div>
+                <div className="text-2xl sm:text-4xl font-bold text-blue-400 mb-2">{currentPlayer.overallRating}</div>
                 <div className="text-sm text-gray-400">Overall Rating</div>
               </div>
 
               {/* Stats Circles */}
-              <div className="grid grid-cols-3 gap-4">
+              <div className="grid grid-cols-3 gap-2 sm:gap-4">
                 <div className="text-center">
-                  <div className={`w-12 h-12 rounded-full border-4 flex items-center justify-center mx-auto mb-2 ${getStatColor(currentPlayer.stats.pace)}`}>
-                    <span className="text-sm font-bold">{currentPlayer.stats.pace}</span>
+                  <div className={`w-8 h-8 sm:w-12 sm:h-12 rounded-full border-2 sm:border-4 flex items-center justify-center mx-auto mb-1 sm:mb-2 ${getStatColor(currentPlayer.stats.pace)}`}>
+                    <span className="text-xs sm:text-sm font-bold">{currentPlayer.stats.pace}</span>
                   </div>
                   <div className="text-xs text-gray-400">Pace</div>
                 </div>
                 <div className="text-center">
-                  <div className={`w-12 h-12 rounded-full border-4 flex items-center justify-center mx-auto mb-2 ${getStatColor(currentPlayer.stats.positioning)}`}>
-                    <span className="text-sm font-bold">{currentPlayer.stats.positioning}</span>
+                  <div className={`w-8 h-8 sm:w-12 sm:h-12 rounded-full border-2 sm:border-4 flex items-center justify-center mx-auto mb-1 sm:mb-2 ${getStatColor(currentPlayer.stats.positioning)}`}>
+                    <span className="text-xs sm:text-sm font-bold">{currentPlayer.stats.positioning}</span>
                   </div>
                   <div className="text-xs text-gray-400">Positioning</div>
                 </div>
                 <div className="text-center">
-                  <div className={`w-12 h-12 rounded-full border-4 flex items-center justify-center mx-auto mb-2 ${getStatColor(currentPlayer.stats.shooting)}`}>
-                    <span className="text-sm font-bold">{currentPlayer.stats.shooting}</span>
+                  <div className={`w-8 h-8 sm:w-12 sm:h-12 rounded-full border-2 sm:border-4 flex items-center justify-center mx-auto mb-1 sm:mb-2 ${getStatColor(currentPlayer.stats.shooting)}`}>
+                    <span className="text-xs sm:text-sm font-bold">{currentPlayer.stats.shooting}</span>
                   </div>
                   <div className="text-xs text-gray-400">Shooting</div>
                 </div>
                 <div className="text-center">
-                  <div className={`w-12 h-12 rounded-full border-4 flex items-center justify-center mx-auto mb-2 ${getStatColor(currentPlayer.stats.passing)}`}>
-                    <span className="text-sm font-bold">{currentPlayer.stats.passing}</span>
+                  <div className={`w-8 h-8 sm:w-12 sm:h-12 rounded-full border-2 sm:border-4 flex items-center justify-center mx-auto mb-1 sm:mb-2 ${getStatColor(currentPlayer.stats.passing)}`}>
+                    <span className="text-xs sm:text-sm font-bold">{currentPlayer.stats.passing}</span>
                   </div>
                   <div className="text-xs text-gray-400">Passing</div>
                 </div>
                 <div className="text-center">
-                  <div className={`w-12 h-12 rounded-full border-4 flex items-center justify-center mx-auto mb-2 ${getStatColor(currentPlayer.stats.dribbling)}`}>
-                    <span className="text-sm font-bold">{currentPlayer.stats.dribbling}</span>
+                  <div className={`w-8 h-8 sm:w-12 sm:h-12 rounded-full border-2 sm:border-4 flex items-center justify-center mx-auto mb-1 sm:mb-2 ${getStatColor(currentPlayer.stats.dribbling)}`}>
+                    <span className="text-xs sm:text-sm font-bold">{currentPlayer.stats.dribbling}</span>
                   </div>
                   <div className="text-xs text-gray-400">Dribbling</div>
                 </div>
                 <div className="text-center">
-                  <div className={`w-12 h-12 rounded-full border-4 flex items-center justify-center mx-auto mb-2 ${getStatColor(currentPlayer.stats.defending)}`}>
-                    <span className="text-sm font-bold">{currentPlayer.stats.defending}</span>
+                  <div className={`w-8 h-8 sm:w-12 sm:h-12 rounded-full border-2 sm:border-4 flex items-center justify-center mx-auto mb-1 sm:mb-2 ${getStatColor(currentPlayer.stats.defending)}`}>
+                    <span className="text-xs sm:text-sm font-bold">{currentPlayer.stats.defending}</span>
                   </div>
                   <div className="text-xs text-gray-400">Defending</div>
                 </div>
@@ -712,19 +712,19 @@ function App() {
             {/* Carousel Navigation */}
             <button 
               onClick={prevSlide}
-              className="absolute left-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-gray-800/80 hover:bg-gray-700/80 rounded-full flex items-center justify-center transition-colors z-30"
+              className="absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 bg-gray-800/80 hover:bg-gray-700/80 rounded-full flex items-center justify-center transition-colors z-30"
             >
-              <ChevronLeft size={24} />
+              <ChevronLeft size={20} className="sm:w-6 sm:h-6" />
             </button>
             <button 
               onClick={nextSlide}
-              className="absolute right-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-gray-800/80 hover:bg-gray-700/80 rounded-full flex items-center justify-center transition-colors z-30"
+              className="absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 bg-gray-800/80 hover:bg-gray-700/80 rounded-full flex items-center justify-center transition-colors z-30"
             >
-              <ChevronRight size={24} />
+              <ChevronRight size={20} className="sm:w-6 sm:h-6" />
             </button>
 
             {/* Carousel Indicators */}
-            <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2 z-30">
+            <div className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2 z-30">
               {players.map((_, index) => (
                 <button
                   key={index}
@@ -743,50 +743,50 @@ function App() {
       </section>
 
       {/* About Us Section */}
-      <section className="px-6 py-20 bg-gray-800">
+      <section className="px-4 sm:px-6 py-12 sm:py-20 bg-gray-800">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold mb-12">ABOUT US</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold mb-8 sm:mb-12">ABOUT US</h2>
           
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="flex space-x-6">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            <div className="flex space-x-3 sm:space-x-6 justify-center lg:justify-start order-last lg:order-first">
               {/* Three athlete placeholders */}
-              <div className="w-32 h-48 bg-purple-600 rounded-lg"></div>
-              <div className="w-32 h-48 bg-gray-700 rounded-lg"></div>
-              <div className="w-32 h-48 bg-teal-500 rounded-lg"></div>
+              <div className="w-20 h-32 sm:w-32 sm:h-48 bg-purple-600 rounded-lg"></div>
+              <div className="w-20 h-32 sm:w-32 sm:h-48 bg-gray-700 rounded-lg"></div>
+              <div className="w-20 h-32 sm:w-32 sm:h-48 bg-teal-500 rounded-lg"></div>
             </div>
             
             <div>
-              <h3 className="text-2xl font-bold mb-6">DISCOVER. EVALUATE. ELEVATE.</h3>
-              <p className="text-gray-300 mb-8">
+              <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-center lg:text-left">DISCOVER. EVALUATE. ELEVATE.</h3>
+              <p className="text-gray-300 mb-6 sm:mb-8 text-center lg:text-left">
                 We bridge the gap between raw talent and professional clubs with professional scouts. Our mission is to bridge the gap between raw talent and professional opportunities, providing a comprehensive platform for scouts, athletes, and clubs to connect and thrive.
               </p>
-              <p className="text-gray-300 mb-8">
+              <p className="text-gray-300 mb-6 sm:mb-8 text-center lg:text-left">
                 Whether you're an athlete looking to be discovered or a scout seeking the next big talent, K2S makes it possible.
               </p>
 
               {/* Feature boxes */}
               <div className="space-y-4">
-                <div className="flex items-start space-x-4">
-                  <div className="w-16 h-16 bg-gray-700 rounded-lg"></div>
+                <div className="flex items-start space-x-3 sm:space-x-4">
+                  <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gray-700 rounded-lg flex-shrink-0"></div>
                   <div>
-                    <h4 className="font-bold">DISCOVER</h4>
-                    <p className="text-sm text-gray-400">Access talent from all levels, connecting upcoming stars with opportunities at professional scouting teams globally.</p>
+                    <h4 className="font-bold text-sm sm:text-base">DISCOVER</h4>
+                    <p className="text-xs sm:text-sm text-gray-400">Access talent from all levels, connecting upcoming stars with opportunities at professional scouting teams globally.</p>
                   </div>
                 </div>
                 
-                <div className="flex items-start space-x-4">
-                  <div className="w-16 h-16 bg-gray-700 rounded-lg"></div>
+                <div className="flex items-start space-x-3 sm:space-x-4">
+                  <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gray-700 rounded-lg flex-shrink-0"></div>
                   <div>
-                    <h4 className="font-bold">EVALUATE</h4>
-                    <p className="text-sm text-gray-400">Comprehensive assessment tools that measure technical skills, marking, and assessing professional development.</p>
+                    <h4 className="font-bold text-sm sm:text-base">EVALUATE</h4>
+                    <p className="text-xs sm:text-sm text-gray-400">Comprehensive assessment tools that measure technical skills, marking, and assessing professional development.</p>
                   </div>
                 </div>
                 
-                <div className="flex items-start space-x-4">
-                  <div className="w-16 h-16 bg-gray-700 rounded-lg"></div>
+                <div className="flex items-start space-x-3 sm:space-x-4">
+                  <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gray-700 rounded-lg flex-shrink-0"></div>
                   <div>
-                    <h4 className="font-bold">ELEVATE</h4>
-                    <p className="text-sm text-gray-400">Promote athletes at all levels, connecting them to professional opportunities and bridging gaps across sports.</p>
+                    <h4 className="font-bold text-sm sm:text-base">ELEVATE</h4>
+                    <p className="text-xs sm:text-sm text-gray-400">Promote athletes at all levels, connecting them to professional opportunities and bridging gaps across sports.</p>
                   </div>
                 </div>
               </div>
@@ -796,73 +796,73 @@ function App() {
       </section>
 
       {/* How It Works Section */}
-      <section className="px-6 py-20">
+      <section className="px-4 sm:px-6 py-12 sm:py-20">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold mb-12">HOW IT WORKS</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold mb-8 sm:mb-12 text-center">HOW IT WORKS</h2>
           
-          <div className="grid md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
             <div className="text-center">
-              <div className="w-full h-32 bg-gray-800 rounded-lg mb-4"></div>
-              <h3 className="font-bold mb-2">CREATE YOUR PROFILE</h3>
-              <p className="text-sm text-gray-400">Upload your name, age, contact info, position, and club you're playing for.</p>
+              <div className="w-full h-24 sm:h-32 bg-gray-800 rounded-lg mb-3 sm:mb-4"></div>
+              <h3 className="font-bold mb-2 text-sm sm:text-base">CREATE YOUR PROFILE</h3>
+              <p className="text-xs sm:text-sm text-gray-400">Upload your name, age, contact info, position, and club you're playing for.</p>
             </div>
             
             <div className="text-center">
-              <div className="w-full h-32 bg-gray-800 rounded-lg mb-4"></div>
-              <h3 className="font-bold mb-2">SHOWCASE YOUR TALENT</h3>
-              <p className="text-sm text-gray-400">Share videos of your best performances and achievements.</p>
+              <div className="w-full h-24 sm:h-32 bg-gray-800 rounded-lg mb-3 sm:mb-4"></div>
+              <h3 className="font-bold mb-2 text-sm sm:text-base">SHOWCASE YOUR TALENT</h3>
+              <p className="text-xs sm:text-sm text-gray-400">Share videos of your best performances and achievements.</p>
             </div>
             
             <div className="text-center">
-              <div className="w-full h-32 bg-gray-800 rounded-lg mb-4"></div>
-              <h3 className="font-bold mb-2">GET RATED BY EXPERTS</h3>
-              <p className="text-sm text-gray-400">Scout evaluates your ability, speed, physicality, and more.</p>
+              <div className="w-full h-24 sm:h-32 bg-gray-800 rounded-lg mb-3 sm:mb-4"></div>
+              <h3 className="font-bold mb-2 text-sm sm:text-base">GET RATED BY EXPERTS</h3>
+              <p className="text-xs sm:text-sm text-gray-400">Scout evaluates your ability, speed, physicality, and more.</p>
             </div>
             
             <div className="text-center">
-              <div className="w-full h-32 bg-gray-800 rounded-lg mb-4"></div>
-              <h3 className="font-bold mb-2">GO PRO</h3>
-              <p className="text-sm text-gray-400">Get scouted, build your network, and take the next step.</p>
+              <div className="w-full h-24 sm:h-32 bg-gray-800 rounded-lg mb-3 sm:mb-4"></div>
+              <h3 className="font-bold mb-2 text-sm sm:text-base">GO PRO</h3>
+              <p className="text-xs sm:text-sm text-gray-400">Get scouted, build your network, and take the next step.</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Why Choose K2S Section */}
-      <section className="px-6 py-20 bg-gray-800">
+      <section className="px-4 sm:px-6 py-12 sm:py-20 bg-gray-800">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold mb-12">WHY CHOOSE K2S?</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold mb-8 sm:mb-12 text-center">WHY CHOOSE K2S?</h2>
           
-          <div className="space-y-12">
+          <div className="space-y-8 sm:space-y-12">
             {/* For Athletes */}
-            <div className="flex items-center space-x-8">
-              <div className="w-24 h-24 bg-purple-600 rounded-lg"></div>
+            <div className="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-6 lg:space-x-8 text-center sm:text-left">
+              <div className="w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 bg-purple-600 rounded-lg flex-shrink-0"></div>
               <div className="flex-1">
-                <h3 className="text-2xl font-bold mb-4">FOR ATHLETES</h3>
-                <ul className="space-y-2 text-gray-300">
+                <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">FOR ATHLETES</h3>
+                <ul className="space-y-1 sm:space-y-2 text-gray-300 text-sm sm:text-base">
                   <li>• Unmatched visibility to professional scouts</li>
                   <li>• Performance-based evaluation system</li>
                   <li>• Direct access to professional clubs</li>
                   <li>• Build a profile that highlights your journey and talent</li>
                 </ul>
               </div>
-              <button className="bg-purple-600 hover:bg-purple-700 px-6 py-2 rounded-lg transition-colors">
+              <button className="bg-purple-600 hover:bg-purple-700 px-4 sm:px-6 py-2 rounded-lg transition-colors text-sm sm:text-base w-full sm:w-auto flex-shrink-0">
                 JOIN NOW
               </button>
             </div>
             
             {/* For Scouts */}
-            <div className="flex items-center space-x-8">
-              <div className="w-24 h-24 bg-gray-700 rounded-lg"></div>
+            <div className="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-6 lg:space-x-8 text-center sm:text-left">
+              <div className="w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 bg-gray-700 rounded-lg flex-shrink-0"></div>
               <div className="flex-1">
-                <h3 className="text-2xl font-bold mb-4">FOR SCOUTS</h3>
-                <ul className="space-y-2 text-gray-300">
+                <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">FOR SCOUTS</h3>
+                <ul className="space-y-1 sm:space-y-2 text-gray-300 text-sm sm:text-base">
                   <li>• Access a diverse pool of talent across sports</li>
                   <li>• Data-driven insights for better evaluations</li>
                   <li>• Simplify talent discovery with detailed player profiles</li>
                 </ul>
               </div>
-              <button className="bg-purple-600 hover:bg-purple-700 px-6 py-2 rounded-lg transition-colors">
+              <button className="bg-purple-600 hover:bg-purple-700 px-4 sm:px-6 py-2 rounded-lg transition-colors text-sm sm:text-base w-full sm:w-auto flex-shrink-0">
                 JOIN NOW
               </button>
             </div>
@@ -871,56 +871,56 @@ function App() {
       </section>
 
       {/* Ready to Take Next Step */}
-      <section className="px-6 py-20">
+      <section className="px-4 sm:px-6 py-12 sm:py-20">
         <div className="max-w-7xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-8">READY TO TAKE THE NEXT STEP?</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8">READY TO TAKE THE NEXT STEP?</h2>
           
-          <div className="flex justify-center items-center space-x-4 mb-8">
+          <div className="flex justify-center items-center space-x-2 sm:space-x-4 mb-6 sm:mb-8">
             {/* Five athlete silhouettes */}
-            <div className="w-16 h-20 bg-yellow-500 rounded-lg"></div>
-            <div className="w-16 h-20 bg-orange-500 rounded-lg"></div>
-            <div className="w-16 h-20 bg-orange-400 rounded-lg"></div>
-            <div className="w-16 h-20 bg-teal-500 rounded-lg"></div>
-            <div className="w-16 h-20 bg-red-500 rounded-lg"></div>
+            <div className="w-10 h-12 sm:w-16 sm:h-20 bg-yellow-500 rounded-lg"></div>
+            <div className="w-10 h-12 sm:w-16 sm:h-20 bg-orange-500 rounded-lg"></div>
+            <div className="w-10 h-12 sm:w-16 sm:h-20 bg-orange-400 rounded-lg"></div>
+            <div className="w-10 h-12 sm:w-16 sm:h-20 bg-teal-500 rounded-lg"></div>
+            <div className="w-10 h-12 sm:w-16 sm:h-20 bg-red-500 rounded-lg"></div>
           </div>
           
-          <div className="flex justify-center space-x-8 mb-8">
+          <div className="flex flex-col sm:flex-row justify-center space-y-2 sm:space-y-0 sm:space-x-8 mb-6 sm:mb-8 text-sm sm:text-base">
             <span>• Join free as an Athlete</span>
             <span>• Join free as a Scout</span>
           </div>
           
-          <button className="bg-purple-600 hover:bg-purple-700 px-8 py-3 rounded-lg text-lg font-semibold transition-colors">
+          <button className="bg-purple-600 hover:bg-purple-700 px-6 sm:px-8 py-2 sm:py-3 rounded-lg text-base sm:text-lg font-semibold transition-colors w-full sm:w-auto">
             JOIN NOW
           </button>
         </div>
       </section>
 
       {/* Stories Section */}
-      <section className="px-6 py-20 bg-gray-800">
+      <section className="px-4 sm:px-6 py-12 sm:py-20 bg-gray-800">
         <div className="max-w-7xl mx-auto">
-          <div className="flex items-center justify-between mb-8">
-            <h2 className="text-3xl font-bold">STORIES FROM OUR USERS</h2>
+          <div className="flex flex-col sm:flex-row items-center justify-between mb-6 sm:mb-8 space-y-4 sm:space-y-0">
+            <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-center sm:text-left">STORIES FROM OUR USERS</h2>
             <div className="flex space-x-2">
-              <button className="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-gray-600 transition-colors">
+              <button className="w-8 h-8 sm:w-10 sm:h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-gray-600 transition-colors">
                 <ChevronLeft size={20} />
               </button>
-              <button className="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-gray-600 transition-colors">
+              <button className="w-8 h-8 sm:w-10 sm:h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-gray-600 transition-colors">
                 <ChevronRight size={20} />
               </button>
             </div>
           </div>
           
-          <div className="bg-gray-900 rounded-lg p-8">
-            <div className="flex items-start space-x-6">
-              <div className="w-64 h-48 bg-gray-700 rounded-lg"></div>
+          <div className="bg-gray-900 rounded-lg p-4 sm:p-8">
+            <div className="flex flex-col lg:flex-row items-start space-y-4 lg:space-y-0 lg:space-x-6">
+              <div className="w-full lg:w-64 h-32 sm:h-48 bg-gray-700 rounded-lg flex-shrink-0"></div>
               <div className="flex-1">
-                <blockquote className="text-xl mb-4">
+                <blockquote className="text-lg sm:text-xl mb-4 text-center lg:text-left">
                   "THIS PLATFORM SIMPLIFIED TALENT SCOUTING AND HELPED US FIND EXCEPTIONAL PLAYERS."
                 </blockquote>
-                <div className="flex items-center space-x-3">
-                  <div className="w-10 h-10 bg-gray-600 rounded-full"></div>
+                <div className="flex items-center justify-center lg:justify-start space-x-3">
+                  <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gray-600 rounded-full"></div>
                   <div>
-                    <div className="font-semibold">MARK REYNOLDS</div>
+                    <div className="font-semibold text-sm sm:text-base">MARK REYNOLDS</div>
                     <div className="text-sm text-gray-400">Professional Scout</div>
                   </div>
                 </div>
@@ -931,29 +931,29 @@ function App() {
       </section>
 
       {/* Newsletter Section */}
-      <section className="px-6 py-20">
-        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+      <section className="px-4 sm:px-6 py-12 sm:py-20">
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           <div>
-            <div className="text-4xl font-bold mb-8">K2S</div>
-            <h3 className="text-2xl font-bold mb-4">GET THE LATEST SCOUTING UPDATES!</h3>
-            <p className="text-gray-400 mb-6">
+            <div className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-6 sm:mb-8 text-center lg:text-left">K2S</div>
+            <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-center lg:text-left">GET THE LATEST SCOUTING UPDATES!</h3>
+            <p className="text-gray-400 mb-4 sm:mb-6 text-center lg:text-left text-sm sm:text-base">
               Join the free community and stay ahead of the game! Get exclusive scouting insights, athlete spotlights, and industry news delivered directly to your inbox. Don't miss out on the latest trends shaping the future of sports talent discovery.
             </p>
-            <div className="flex space-x-4">
+            <div className="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4">
               <input 
                 type="email" 
                 placeholder="Enter your email"
-                className="flex-1 bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 focus:outline-none focus:border-purple-500"
+                className="flex-1 bg-gray-800 border border-gray-700 rounded-lg px-3 sm:px-4 py-2 sm:py-3 focus:outline-none focus:border-purple-500 text-sm sm:text-base"
               />
-              <button className="bg-purple-600 hover:bg-purple-700 px-6 py-3 rounded-lg transition-colors">
+              <button className="bg-purple-600 hover:bg-purple-700 px-4 sm:px-6 py-2 sm:py-3 rounded-lg transition-colors text-sm sm:text-base">
                 Subscribe
               </button>
             </div>
           </div>
           
-          <div className="text-right">
-            <div className="w-32 h-32 bg-purple-600 rounded-full ml-auto mb-8"></div>
-            <div className="space-y-4 text-sm">
+          <div className="text-center lg:text-right order-first lg:order-last">
+            <div className="w-24 h-24 sm:w-32 sm:h-32 bg-purple-600 rounded-full mx-auto lg:ml-auto mb-6 sm:mb-8"></div>
+            <div className="space-y-3 sm:space-y-4 text-sm">
               <div>
                 <div className="font-semibold">Email</div>
                 <div className="text-gray-400">info@k2ssports.com</div>
@@ -972,10 +972,10 @@ function App() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 px-6 py-8">
+      <footer className="bg-gray-900 px-4 sm:px-6 py-6 sm:py-8">
         <div className="max-w-7xl mx-auto">
-          <div className="flex items-center justify-between">
-            <p className="text-gray-400">&copy; Copyright 2024 K2s Sports.</p>
+          <div className="flex flex-col sm:flex-row items-center justify-between space-y-4 sm:space-y-0">
+            <p className="text-gray-400 text-sm sm:text-base">&copy; Copyright 2024 K2s Sports.</p>
             <button 
               onClick={() => handleLoginClick('admin' as any)}
               className="flex items-center space-x-2 text-gray-500 hover:text-gray-300 transition-colors text-sm"
